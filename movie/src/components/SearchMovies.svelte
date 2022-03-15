@@ -1,7 +1,30 @@
+<script>
+	let inputValue = '';
+	let active = false;
+
+	function cancelInactive() {
+		if (inputValue) {
+			active = true;
+		} else {
+			active = false;
+		}
+	}
+</script>
+
 <form class="search">
-	<label for="search_movie">Search Movie</label>
-	<input name="search_movie" type="text" />
-	<button>Search</button>
+	{#if !active}
+		<label for="search_movie">Search Movie</label>
+	{/if}
+	<input
+		on:blur={cancelInactive}
+		on:focus={() => (active = true)}
+		bind:value={inputValue}
+		name="search_movie"
+		type="text"
+		class={active ? 'selected' : ''}
+	/>{#if inputValue}
+		<button>Search</button>
+	{/if}
 </form>
 
 <style>
@@ -50,5 +73,8 @@
 		pointer-events: none;
 		color: #fff;
 		padding: 0rem 1rem;
+	}
+	input.selected {
+		background: rgb(50, 50, 50);
 	}
 </style>
