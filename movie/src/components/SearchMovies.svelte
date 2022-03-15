@@ -41,4 +41,14 @@
 		border-radius: 10px;
 		padding: 1rem;
 	}
+	label {
+		position: absolute;
+		font-size: 0.8rem;
+		top: 50%;
+		left: 0;
+		transform: translate(0, -50%);
+		pointer-events: none;
+		color: #fff;
+		padding: 0rem 1rem;
+	}
 </style>
