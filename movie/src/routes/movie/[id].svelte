@@ -46,7 +46,7 @@
 	p {
 		padding: 1rem 0rem;
 	}
-	.img-containter {
+	.img-container {
 		width: 100%;
 	}
 	img {

@@ -16,7 +16,6 @@
 <script>
 	import PopularMovies from '../components/PopularMovies.svelte';
 	export let popular;
-	import global from '../global.css';
 </script>
 
 <section>
